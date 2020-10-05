@@ -437,3 +437,7 @@ fabric.properties
 *.gem
 *.deb
 *.rpm
+
+.idea/
+app/site.db
+app/test-site.db
