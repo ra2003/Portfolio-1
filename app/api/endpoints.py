@@ -106,7 +106,7 @@ class Get(Resource):
 # TESTING ROUTES
 @testing_api.route("/get_test")
 @testing_api.doc(
-    description="Get my contact info",
+    description="Test a get request (with optional query param)",
     params={"test_query": "Optionally pass in a test query"},
 )
 class Get(Resource):
