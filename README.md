@@ -4,13 +4,22 @@ Ross Mountjoy's personal portfolio website. Want to run it locally? Follow the i
 
 ## Installing
 
-### Using Docker:
+### (Option 2) Pull from Docker Hub:
+```bash
+docker create \
+  --name=rossmountjoyportfolio \
+  -p 5000:5000 \
+  --restart unless-stopped \
+  rmountjoy/portfolio:latest
+```
+
+### (Option 2) Build Using Docker:
 ```bash
 docker build -t Portfolio .
 docker run --publish 5000:5000 Portfolio
 ```
 
-### Development Server:
+### (Option 3) Development Server:
 Clone repository & navigate to it:
 
 ```bash
