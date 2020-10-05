@@ -1,0 +1,4 @@
+Flask
+uWSGI
+Flask-SQLAlchemy
+flask-restx
