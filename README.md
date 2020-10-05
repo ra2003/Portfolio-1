@@ -11,7 +11,7 @@ Ross Mountjoy's personal portfolio website.
 - Includes different deploy modes, ready for any deployment environment.
 ---
 
-Want to run it locally?.
+Want to run it locally?
 
 ## Installing
 
@@ -25,6 +25,14 @@ docker create \
 ```
 
 ### (Option 2) Build Using Docker:
+Clone repository & navigate to it:
+
+```bash
+git clone https://github.com/rmountjoy92/Portfolio.git
+cd Portfolio
+```
+Build and run using Docker:
+
 ```bash
 docker build -t Portfolio .
 docker run --publish 5000:5000 Portfolio
