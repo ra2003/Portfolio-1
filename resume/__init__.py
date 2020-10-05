@@ -246,13 +246,13 @@ class Resume:
                     "This is done on a Ubuntu server in my basement using Docker. "
                     "Services include: Nextcloud (file sync), Bitwarden "
                     "(password manager), Jellyfin (Netflix like media server), "
-                    "Custom Automation Services (like Zapier), and more!"
+                    "Custom Automation Services (like Zapier), this website, and more!"
                 ),
             },
             {
                 "name": "DIY Electronics",
                 "description": (
-                    "I have designed and built multiple DIY electronic devices, from"
+                    "I have designed and built multiple DIY electronic devices, from "
                     "designing and having PCBs manufactured, to soldering components, "
                     "to 3D printing parts and cases. I have built a few micro laptops "
                     "and a few portable retro game emulator devices."
