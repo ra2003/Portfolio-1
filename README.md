@@ -1,6 +1,17 @@
 # Portfolio
 
-Ross Mountjoy's personal portfolio website. Want to run it locally? Follow the instructions below.
+Ross Mountjoy's personal portfolio website.
+---
+## Features
+
+- Pull from Docker hub, build with docker, or run as a standalone python application!
+- Ready to go REST API with SwaggerUI Documentation
+- Ready to for webpages with Bootstrap CSS
+- Ready to go for interacting with a database using SQLAlchemy
+- Includes different deploy modes, ready for any deployment environment.
+---
+
+Want to run it locally?.
 
 ## Installing
 
@@ -56,6 +67,7 @@ To view/test the rest API go to:
 ### Stack
 - (optionally) Docker
 - Flask (Python 3.8)
+- SQLAlchemy
 - HTML5/Jinja2
 - Bootstrap CSS
 - RestX, SwaggerUI

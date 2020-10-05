@@ -10,6 +10,7 @@ resume_api = restx.namespace(
     "resume", description="Get info about me through the rest API"
 )
 
+testing_api = restx.namespace("test", description="API routes for testing")
 
 # This gets overwritten by rest-x
 @api.route("/", methods=["GET"])
@@ -103,8 +104,8 @@ class Get(Resource):
 
 
 # TESTING ROUTES
-@restx.route("/api/get_test")
-@restx.doc(
+@testing_api.route("/get_test")
+@testing_api.doc(
     description="Get my contact info",
     params={"test_query": "Optionally pass in a test query"},
 )
@@ -113,8 +114,8 @@ class Get(Resource):
         return {"hello": "world", "query": request.args.get("test_query", "")}
 
 
-@restx.route("/api/post_test")
-@restx.doc(
+@testing_api.route("/post_test")
+@testing_api.doc(
     description="Test posting to the server. It can accept any number of form params.",
     params={
         "field1": "Test text to post",
