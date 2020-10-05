@@ -14,12 +14,12 @@ db = SQLAlchemy()
 # https://flask-restx.readthedocs.io/en/latest/quickstart.html
 authorizations = {"basic_auth": {"type": "basic"}}
 restx = Api(
-    version="0.0",
-    title="API",
-    description="API Description",
+    version="1.0",
+    title="Ross Mountjoy Portfolio API",
+    description="Get info from Ross Mountjoy's portfolio",
     authorizations=authorizations,
-    prefix='/api/',
-    doc='/api/'
+    prefix="/api/",
+    doc="/api/",
 )
 
 
@@ -32,15 +32,16 @@ def register_extensions(app):
 # register the blueprint modules
 def register_blueprints(app):
     from app.api import api
-    app.register_blueprint(api, url_prefix='/api')
+
+    app.register_blueprint(api, url_prefix="/api")
 
     from app.site import site
+
     app.register_blueprint(site)
 
 
 # set up the database
 def configure_database(app):
-
     @app.before_first_request
     def initialize_database():
         db.create_all()
