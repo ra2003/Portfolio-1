@@ -4,7 +4,7 @@ Ross Mountjoy's personal portfolio website. Want to run it locally? Follow the i
 
 ## Installing
 
-### (Option 2) Pull from Docker Hub:
+### (Option 1) Pull from Docker Hub:
 ```bash
 docker create \
   --name=rossmountjoyportfolio \
