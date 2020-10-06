@@ -9,6 +9,7 @@
 }
 
 #footer {
+    z-index: 5;
     position: fixed;
     bottom: 0;
     height: 48px;
