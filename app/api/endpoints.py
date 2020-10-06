@@ -23,7 +23,7 @@ def root():
 @resume_api.doc(
     description="Get my whole resume as json", responses={200: "(json map) My resume"}
 )
-class Get(Resource):
+class GetAll(Resource):
     def get(self):
         return {
             "info": resume.info,
@@ -41,14 +41,14 @@ class Get(Resource):
 @resume_api.doc(
     description="Get my contact info", responses={200: "(json map) My contact info"}
 )
-class Get(Resource):
+class GetInfo(Resource):
     def get(self):
         return resume.info
 
 
 @resume_api.route("/skills")
 @resume_api.doc(description="Get my skills", responses={200: "(json list) My skills"})
-class Get(Resource):
+class GetSkills(Resource):
     def get(self):
         return resume.skills
 
@@ -57,7 +57,7 @@ class Get(Resource):
 @resume_api.doc(
     description="Get my education", responses={200: "(json list) My education"}
 )
-class Get(Resource):
+class GetEducation(Resource):
     def get(self):
         return resume.education
 
@@ -66,7 +66,7 @@ class Get(Resource):
 @resume_api.doc(
     description="Get my experience", responses={200: "(json list) My experience"}
 )
-class Get(Resource):
+class GetExperience(Resource):
     def get(self):
         return resume.experience
 
@@ -75,21 +75,21 @@ class Get(Resource):
 @resume_api.doc(
     description="Get my projects", responses={200: "(json list) My projects"}
 )
-class Get(Resource):
+class GetProjects(Resource):
     def get(self):
         return resume.projects
 
 
 @resume_api.route("/hobbies")
 @resume_api.doc(description="Get my hobbies", responses={200: "(json list) My hobbies"})
-class Get(Resource):
+class GetHobbies(Resource):
     def get(self):
         return resume.hobbies
 
 
 @resume_api.route("/pitch")
 @resume_api.doc(description="Get my pitch", responses={200: "(string) My pitch"})
-class Get(Resource):
+class GetPitch(Resource):
     def get(self):
         return resume.pitch
 
@@ -98,7 +98,7 @@ class Get(Resource):
 @resume_api.doc(
     description="Get my references", responses={200: "(json list) My references"}
 )
-class Get(Resource):
+class GetReferences(Resource):
     def get(self):
         return resume.references
 
@@ -109,7 +109,7 @@ class Get(Resource):
     description="Test a get request (with optional query param)",
     params={"test_query": "Optionally pass in a test query"},
 )
-class Get(Resource):
+class GetTest(Resource):
     def get(self):
         return {"hello": "world", "query": request.args.get("test_query", "")}
 
