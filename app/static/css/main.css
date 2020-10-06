@@ -1,0 +1,32 @@
+#headshot{
+    max-width: 165px;
+}
+#nav-badges a {
+    text-decoration: none;
+}
+#nav-badges a:hover {
+    color: var(--bs-gray);
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    height: 48px;
+    width: 100%;
+    background: var(--bs-primary)
+}
+
+#footer .btn {
+    position: fixed;
+    bottom: .3rem;
+    right: 1rem
+}
+
+.card-body {
+    overflow-x:auto !important;
+}
+
+.badge {
+    font-size: 1rem;
+    white-space: normal;
+}
