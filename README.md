@@ -4,10 +4,13 @@ Ross Mountjoy's personal portfolio website.
 ---
 ## Features
 
-- Pull from Docker hub, build with docker, or run as a standalone python application!
+- Created in minutes using my personal Flask template
+- Hosted on an Ubuntu server in my basement using Docker. (AWS ECS version coming soon)
 - Ready to go REST API with SwaggerUI Documentation
-- Ready to for webpages with Bootstrap CSS
-- Ready to go for interacting with a database using SQLAlchemy
+- Includes admin page for viewing/editing database records
+- Ready to go for webpages with Bootstrap CSS
+- Uses managed database from AWS RDS MySQL through SQLAlchemy
+- Pull from Docker hub, build with docker, or run as a standalone python application
 - Includes different deploy modes, ready for any deployment environment.
 ---
 
