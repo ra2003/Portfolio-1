@@ -6,6 +6,7 @@
 
 {% block content %}
 <div class="container">
+
     <div class="row mt-4 justify-content-center">
         <div class="col-sm-12 col-md-10 col-lg-8 col-xl-6">
             <div class="card shadow">
@@ -37,9 +38,29 @@
                     <hr>
                     <h5 class="card-title text-muted mt-4">About This Website</h5>
                     <div class="list-group">
+                        <a data-toggle="collapse" href="#summaryCollapse" class="list-group-item list-group-item-action">
+                            <i class="material-icons-outlined m-2 text-primary" style="font-size: 2rem">info</i><br>
+                            Summary
+                            <div class="collapse" id="summaryCollapse">
+                                <div class="list-group">
+                                    <div class="list-group-item p-4">Created in minutes using my personal Flask template</div>
+                                    <div class="list-group-item p-4">Hosted on an Ubuntu server in my basement using Docker. (AWS ECS version coming soon)</div>
+                                    <div class="list-group-item p-4">Ready to go REST API with SwaggerUI Documentation</div>
+                                    <div class="list-group-item p-4">Includes admin page for viewing/editing database records</div>
+                                    <div class="list-group-item p-4">Ready to go for webpages with Bootstrap CSS</div>
+                                    <div class="list-group-item p-4">Uses managed database from AWS RDS MySQL through SQLAlchemy</div>
+                                    <div class="list-group-item p-4">Pull from Docker hub, build with docker, or run as a standalone python application</div>
+                                    <div class="list-group-item p-4">Includes different deploy modes, ready for any deployment environment.</div>
+                                </div>
+                            </div>
+                        </a>
                         <a href="{{ url_for('api.root') }}" class="list-group-item list-group-item-action">
                             <i class="material-icons-outlined m-2 text-primary" style="font-size: 2rem">timeline</i><br>
                             Test out the REST API
+                        </a>
+                        <a href="{{ url_for('user_system.login') }}" class="list-group-item list-group-item-action">
+                            <i class="material-icons-outlined m-2 text-primary" style="font-size: 2rem">storage</i><br>
+                            Explore the Database
                         </a>
                         <a href="https://github.com/rmountjoy92/Portfolio" class="list-group-item list-group-item-action">
                             <i class="material-icons-outlined m-2 text-primary" style="font-size: 2rem">source</i><br>

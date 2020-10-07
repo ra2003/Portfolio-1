@@ -1,6 +1,9 @@
 import logging
-from flask import Flask, url_for
+from flask import Flask, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager, current_user
+from flask_admin import Admin, expose, AdminIndexView
 from flask_restx import Api
 from app.config import config
 
@@ -22,11 +25,38 @@ restx = Api(
     doc="/api/",
 )
 
+# set up flask login
+login_manager = LoginManager()
+bcrypt = Bcrypt()
+
+
+# set up flask admin
+class AdminView(AdminIndexView):
+    @expose("/")
+    def index(self):
+        return self.render("admin/admin_home.html")
+
+    def is_accessible(self):
+        return current_user.is_authenticated
+
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect(url_for("user_system.login"))
+
+
+admin = Admin(
+    name="Ross Mountjoy's Portfolio Database",
+    template_mode="bootstrap3",
+    index_view=AdminView(),
+)
+
 
 # Lazily initialize the flask extensions
 def register_extensions(app):
     db.init_app(app)
     restx.init_app(app)
+    login_manager.init_app(app)
+    bcrypt.init_app(app)
+    admin.init_app(app)
 
 
 # register the blueprint modules
@@ -38,6 +68,10 @@ def register_blueprints(app):
     from app.site import site
 
     app.register_blueprint(site)
+
+    from app.user_system import user_system
+
+    app.register_blueprint(user_system)
 
 
 # set up the database

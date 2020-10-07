@@ -6,6 +6,16 @@
 # example:
 # export CONFIG=dev
 
+AWS_DATABASE_URI = (
+    "mysql+mysqlconnector://admin:8vxSQCSL2VVNvb@portfolio."
+    "ckwxpbebwiuv.us-east-2.rds.amazonaws.com/portfolio"
+)
+
+SECRET_KEY = "80268a09e0244202a4c0fb7f2c26f4cd"
+
+FLASK_ADMIN_SWATCH = "darkly"
+
+
 class Config:
     DEBUG = False
     TESTING = False
@@ -16,23 +26,27 @@ class ProductionConfig(Config):
 
 
 class DevelopmentConfig(Config):
-    ENV = 'development'
+    ENV = "development"
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "sqlite:///site.db"
+    SQLALCHEMY_DATABASE_URI = AWS_DATABASE_URI
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = SECRET_KEY
+    FLASK_ADMIN_SWATCH = FLASK_ADMIN_SWATCH
 
 
 class TestingConfig(Config):
-    ENV = 'development'
+    ENV = "development"
     DEBUG = True
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = "sqlite:///test-site.db"
+    SQLALCHEMY_DATABASE_URI = AWS_DATABASE_URI
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SECRET_KEY = SECRET_KEY
+    FLASK_ADMIN_SWATCH = FLASK_ADMIN_SWATCH
 
 
 config = {
-    'default': DevelopmentConfig,
-    'dev': DevelopmentConfig,
-    'prod': ProductionConfig,
-    'test': TestingConfig
+    "default": DevelopmentConfig,
+    "dev": DevelopmentConfig,
+    "prod": ProductionConfig,
+    "test": TestingConfig,
 }

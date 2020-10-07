@@ -2,3 +2,7 @@ Flask
 uWSGI
 Flask-SQLAlchemy
 flask-restx
+mysql-connector-python
+Flask-Login
+Flask-Bcrypt
+Flask-Admin

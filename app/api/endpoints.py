@@ -1,4 +1,4 @@
-from flask import url_for, redirect, request
+from flask import request
 from flask_restx import Resource
 from app import restx
 from . import api
@@ -11,6 +11,7 @@ resume_api = restx.namespace(
 )
 
 testing_api = restx.namespace("test", description="API routes for testing")
+
 
 # This gets overwritten by rest-x
 @api.route("/", methods=["GET"])

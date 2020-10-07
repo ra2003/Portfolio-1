@@ -1,0 +1,15 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+    <h3>Welcome to my database admin page.</h3>
+    <h5>Select a table above to get started</h5>
+    <hr>
+    <h4>
+        This website connects to managed AWS RDS MySQL instance.
+        <br>
+        <br>
+        Located at portfolio.ckwxpbebwiuv.us-east-2.rds.amazonaws.com
+    </h4>
+    <hr>
+    <a href="{{ url_for('site.index') }}">Back to portfolio</a>
+{% endblock %}
