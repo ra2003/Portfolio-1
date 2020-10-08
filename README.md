@@ -5,7 +5,7 @@ Ross Mountjoy's personal portfolio website.
 ## Features
 
 - Created in minutes using my personal Flask template
-- Hosted on an Ubuntu server in my basement using Docker. (AWS ECS version coming soon)
+- Fully deployed on AWS using an ECS EC2 cluster
 - Ready to go REST API with SwaggerUI Documentation
 - Includes admin page for viewing/editing database records
 - Ready to go for webpages with Bootstrap CSS
