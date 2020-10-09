@@ -6,12 +6,15 @@
 # example:
 # export CONFIG=dev
 
+# This would obviously need to be pulled in from a credentials manager
+# I have left this here if you would like to test it out yourself.
 AWS_DATABASE_URI = (
     "mysql+mysqlconnector://admin:8vxSQCSL2VVNvb@portfolio."
     "ckwxpbebwiuv.us-east-2.rds.amazonaws.com/portfolio"
 )
-
+# same here
 SECRET_KEY = "80268a09e0244202a4c0fb7f2c26f4cd"
+
 
 FLASK_ADMIN_SWATCH = "darkly"
 
