@@ -279,7 +279,7 @@ class Resume:
             "and has recommended to me that I begin to look for new employment. "
             "As for HomePrep, I maintain ownership in the company, "
             "but as the system is already built, my duties there do not"
-            " consist of full-time work (less than 5 hours a week). "
+            " consist of full-time work. "
             "Working on HomePrep, I've really fallen back in love with programming,"
             " and have decided to try out working in the industry. "
             "I can provide multiple references that will describe me as a highly"
