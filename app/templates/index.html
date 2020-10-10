@@ -41,19 +41,19 @@
                         <a data-toggle="collapse" href="#summaryCollapse" class="list-group-item list-group-item-action">
                             <i class="material-icons-outlined m-2 text-primary" style="font-size: 2rem">info</i><br>
                             Summary
-                            <div class="collapse" id="summaryCollapse">
-                                <div class="list-group">
-                                    <div class="list-group-item p-4">Created in minutes using my personal Flask template</div>
-                                    <div class="list-group-item p-4">Fully deployed on AWS using an ECS EC2 cluster</div>
-                                    <div class="list-group-item p-4">Ready to go REST API with SwaggerUI Documentation</div>
-                                    <div class="list-group-item p-4">Includes admin page for viewing/editing database records</div>
-                                    <div class="list-group-item p-4">Ready to go for webpages with Bootstrap CSS</div>
-                                    <div class="list-group-item p-4">Uses managed database from AWS RDS MySQL through SQLAlchemy</div>
-                                    <div class="list-group-item p-4">Pull from Docker hub, build with docker, or run as a standalone python application</div>
-                                    <div class="list-group-item p-4">Includes different deploy modes, ready for any deployment environment.</div>
-                                </div>
-                            </div>
                         </a>
+                        <div class="collapse list-group-item" id="summaryCollapse">
+                            <div class="list-group shadow">
+                                <div class="list-group-item p-4">Created in minutes using my personal Flask template</div>
+                                <div class="list-group-item p-4">Fully deployed on AWS using an ECS EC2 cluster</div>
+                                <div class="list-group-item p-4">Ready to go REST API with SwaggerUI Documentation</div>
+                                <div class="list-group-item p-4">Includes admin page for viewing/editing database records</div>
+                                <div class="list-group-item p-4">Ready to go for webpages with Bootstrap CSS</div>
+                                <div class="list-group-item p-4">Uses managed database from AWS RDS MySQL through SQLAlchemy</div>
+                                <div class="list-group-item p-4">Pull from Docker hub, build with docker, or run as a standalone python application</div>
+                                <div class="list-group-item p-4">Includes different deploy modes, ready for any deployment environment.</div>
+                            </div>
+                        </div>
                         <a href="{{ url_for('api.root') }}" class="list-group-item list-group-item-action">
                             <i class="material-icons-outlined m-2 text-primary" style="font-size: 2rem">timeline</i><br>
                             Test out the REST API
@@ -104,12 +104,24 @@
                     <h3 id="skills" class="card-title">Skills</h3>
                     <hr>
                     <ul class="list-group">
-                        {% for skill in resume.skills %}
-                            <li class="list-group-item p-4">
+                        <li class="list-group-item active text-dark">
+                            Core Skills
+                        </li>
+                        <li class="list-group-item p-4">
+                            {% for skill in resume.skills if skill['level'] == 'advanced' %}
+                                    <span class="badge bg-secondary m-2 text-white">{{ skill['name'] }}</span>
+                            {% endfor %}
+                        </li>
+                    </ul>
+                    <ul class="list-group mt-4">
+                        <li class="list-group-item active text-dark">
+                            Additional Skills
+                        </li>
+                        <li class="list-group-item p-4">
+                            {% for skill in resume.skills if skill['level'] in ['proficient', 'familiar'] %}
                                 <span class="badge bg-secondary m-2 text-white">{{ skill['name'] }}</span>
-                                <span class="badge bg-primary m-2">{{ skill['level']|title }}</span>
-                            </li>
-                        {% endfor %}
+                            {% endfor %}
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -164,10 +176,18 @@
                                 <span class="badge bg-primary m-2">{{ experience['date'] }}</span>
                                 <hr>
                                 <h6 class="text-secondary">Duties</h6>
-                                <ul class="list-group">
+                                <ul class="list-group mb-3">
                                     {% for duty in experience['duties'] %}
                                         <li class="list-group-item p-4">
                                             {{ duty }}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <h6 class="text-secondary">Achievements</h6>
+                                <ul class="list-group">
+                                    {% for achievement in experience['achievements'] %}
+                                        <li class="list-group-item p-4">
+                                            {{ achievement }}
                                         </li>
                                     {% endfor %}
                                 </ul>

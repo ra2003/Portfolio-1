@@ -7,7 +7,7 @@ class Resume:
         self.info = {
             "name": "Ross Mountjoy",
             "email": "ross.mountjoy@gmail.com",
-            "phone": "540-212-9614",
+            "phone": "540-501-5167",
             "location": "Washington DC",
             "can_start": datetime.utcnow().strftime("%x"),
             "github_profile": "https://github.com/rmountjoy92",
@@ -295,16 +295,16 @@ class Resume:
             {
                 "title": "CEO HomePrep, Co-owner Waterloo Investments",
                 "name": "Josh Snyder",
-                "phone": "412-708-6708",
+                "phone": "Email me for phone",
             },
             {
                 "title": "CEO Mountjoy Properties, Co-owner Waterloo Investments",
                 "name": "Rick Mountjoy",
-                "phone": "703-725-5083",
+                "phone": "Email me for phone",
             },
             {
                 "title": "CEO Keller Williams McLean",
                 "name": "Amina Basic",
-                "phone": "571-205-6565",
+                "phone": "Email me for phone",
             },
         ]
